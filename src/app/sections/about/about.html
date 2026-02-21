@@ -1,0 +1,49 @@
+<section class="w-full bg-surface-light py-16 md:py-24" id="about">
+  <div class="max-w-[1280px] mx-auto px-4 md:px-10">
+    <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+      <!-- Image -->
+      <div class="w-full lg:w-1/2 relative">
+        <div class="absolute -top-4 -left-4 w-full h-full border-2 border-primary rounded-2xl hidden md:block"></div>
+        <div class="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-xl">
+          <img
+            alt="Aurore Lemire, coach Pilates et fitness certifiée chez Les Étoiles d'Aurore"
+            class="object-cover w-full h-full"
+            src="assets/photo-05.webp" />
+        </div>
+        <!-- Élément décoratif -->
+        <div class="absolute bottom-6 right-6 bg-white p-4 rounded-xl shadow-lg max-w-[200px]">
+          <p class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Philosophie</p>
+          <p class="text-sm font-medium italic">« L'équilibre ne se trouve pas, il se crée. »</p>
+        </div>
+      </div>
+
+      <!-- Contenu -->
+      <div class="w-full lg:w-1/2 flex flex-col gap-6">
+        <div class="flex items-center gap-2">
+          <span class="h-px w-12 bg-primary"></span>
+          <span class="text-primary font-bold uppercase tracking-wider text-sm">La Coach</span>
+        </div>
+        <h2 class="text-3xl md:text-5xl font-black leading-tight text-text-light">
+          Rencontrez votre coach,<br>Aurore Lemire
+        </h2>
+        <div class="text-gray-600 text-base md:text-lg leading-relaxed space-y-4">
+          <p>
+            Avec plus de 10 ans d'expérience dans le monde du fitness, je crois en une approche holistique du mouvement. Mon parcours a commencé dans l'athlétisme de compétition, ce qui m'a conduit à découvrir le pouvoir régénérant du Pilates.
+          </p>
+          <p>
+            En combinant la précision du Pilates avec la puissance brute de l'entraînement fonctionnel, mon objectif est de vous aider à mieux bouger, vous sentir plus fort(e), et prévenir les blessures.
+          </p>
+          <p>
+            Que vous soyez en rééducation ou que vous cherchiez à battre un nouveau record, mes cours sont conçus pour vous challenger tout en respectant les limites de votre corps.
+          </p>
+        </div>
+        <div class="pt-4">
+          <a routerLink="/bio" class="flex items-center gap-2 text-text-light font-bold hover:text-primary transition-colors group cursor-pointer no-underline">
+            <span>Lire la bio complète</span>
+            <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

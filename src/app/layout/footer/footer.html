@@ -1,0 +1,74 @@
+<footer class="bg-background-light border-t border-border-light pt-16 pb-8">
+  <div class="max-w-[1280px] mx-auto px-4 md:px-10">
+    <div class="flex flex-col md:flex-row justify-between gap-12 mb-16">
+      <!-- Marque -->
+      <div class="flex flex-col gap-4 max-w-xs">
+        <div class="flex items-center gap-2">
+          <img src="logo.png" alt="Les Étoiles d'Aurore" class="h-14 w-14" />
+          <span class="text-xl font-bold">Les Étoiles d'Aurore</span>
+        </div>
+        <p class="text-sm text-gray-500">
+          Vous accompagner pour mieux bouger, vous sentir plus fort(e), et vivre une vie équilibrée grâce à un coaching expert.
+        </p>
+      </div>
+
+      <!-- Liens -->
+      <div class="flex flex-col md:flex-row gap-12 md:gap-24">
+        <div class="flex flex-col gap-4">
+          <h4 class="font-bold text-sm uppercase tracking-wider text-gray-400">Studio</h4>
+          <a class="text-sm hover:text-primary transition-colors" routerLink="/" fragment="classes">Cours</a>
+          <a class="text-sm hover:text-primary transition-colors" routerLink="/tarifs">Tarifs</a>
+          <a class="text-sm hover:text-primary transition-colors" routerLink="/bio">Coach</a>
+        </div>
+        <div class="flex flex-col gap-4">
+          <h4 class="font-bold text-sm uppercase tracking-wider text-gray-400">Support</h4>
+          <a class="text-sm hover:text-primary transition-colors" routerLink="contact">Me contacter</a>
+          <a class="text-sm hover:text-primary transition-colors" routerLink="/confidentialite">Politique de confidentialité</a>
+          <a class="text-sm hover:text-primary transition-colors" routerLink="/mentions-legales">Mentions légales</a>
+        </div>
+      </div>
+
+      <!-- Instagram -->
+      <div class="max-w-xs w-full">
+        <a href="https://www.instagram.com/lesetoilesdaurorecoaching/" target="_blank" rel="noopener noreferrer"
+           class="group block bg-gradient-to-br from-primary-dark to-primary rounded-2xl p-5 text-white no-underline transition-transform hover:scale-[1.02]">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center" style.backgroundImage="url('assets/insta-profile.jpg')">
+              <img src="assets/insta-profile.webp" alt="Profil Instagram" class="w-full h-full object-cover rounded-full" />
+
+            </div>
+            <div>
+              <p class="font-bold text-sm">&#64;lesetoilesdaurorecoaching</p>
+              <p class="text-xs opacity-80">Instagram</p>
+            </div>
+          </div>
+          <p class="text-sm opacity-90 mb-3">Coulisses, conseils et séances en live 📸</p>
+          <span class="inline-flex items-center gap-1 text-xs font-bold bg-white/20 rounded-full px-3 py-1 group-hover:bg-white/30 transition-colors">
+            Me suivre
+          <span class="material-symbols-outlined text-sm leading-none">arrow_forward</span>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-200 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-xs text-gray-500">© 2026 Les Étoiles d'Aurore. Tous droits réservés.</p>
+      <div class="flex items-center gap-6">
+        <a class="text-gray-500 hover:text-primary transition-colors" href="#">
+          <span class="material-symbols-outlined text-lg">public</span>
+        </a>
+        <button class="text-gray-500 hover:text-primary transition-colors cursor-pointer relative" (click)="shareOrCopy()">
+          <span class="material-symbols-outlined text-lg">{{ copied() ? 'check' : 'share' }}</span>
+          @if (copied()) {
+            <span class="absolute -top-8 left-1/2 -translate-x-1/2 text-xs bg-text-light text-white px-2 py-1 rounded whitespace-nowrap">
+              Lien copié !
+            </span>
+          }
+        </button>
+        <a class="text-gray-500 hover:text-primary transition-colors" routerLink="contact">
+          <span class="material-symbols-outlined text-lg">mail</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

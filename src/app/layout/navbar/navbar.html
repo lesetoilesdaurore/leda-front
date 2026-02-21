@@ -1,0 +1,36 @@
+<header class="sticky top-0 z-50 w-full bg-surface-light/90 backdrop-blur-md border-b border-border-light">
+  <div class="px-4 md:px-10 py-4 flex items-center justify-between max-w-[1280px] mx-auto w-full">
+    <!-- Logo -->
+    <a routerLink="/" class="flex items-center gap-2 cursor-pointer no-underline">
+      <img src="logo.png" alt="Les Étoiles d'Aurore" class="h-14 w-14" />
+      <h2 class="text-text-light text-xl font-bold tracking-tight">Les Étoiles d'Aurore</h2>
+    </a>
+
+    <!-- Desktop Nav -->
+    <div class="hidden md:flex items-center gap-8">
+      <nav class="flex items-center gap-8">
+        <a class="text-sm font-medium hover:text-primary transition-colors" routerLink="/" fragment="classes">Cours</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors" routerLink="/" fragment="about">À propos</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors" routerLink="/" fragment="testimonials">Témoignages</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors" routerLink="/tarifs">Tarifs</a>
+      </nav>
+      <a routerLink="/contact"><app-button variant="primary" size="sm">Me contacter</app-button></a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button class="md:hidden text-text-light cursor-pointer" (click)="toggleMobileMenu()">
+      <span class="material-symbols-outlined">{{ mobileMenuOpen() ? 'close' : 'menu' }}</span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  @if (mobileMenuOpen()) {
+    <div class="md:hidden bg-surface-light border-t border-border-light px-4 py-6 flex flex-col gap-4">
+      <a class="text-sm font-medium hover:text-primary transition-colors" routerLink="/" fragment="classes" (click)="toggleMobileMenu()">Cours</a>
+      <a class="text-sm font-medium hover:text-primary transition-colors" routerLink="/" fragment="about" (click)="toggleMobileMenu()">À propos</a>
+      <a class="text-sm font-medium hover:text-primary transition-colors" routerLink="/" fragment="testimonials" (click)="toggleMobileMenu()">Témoignages</a>
+      <a class="text-sm font-medium hover:text-primary transition-colors" routerLink="/tarifs" (click)="toggleMobileMenu()">Tarifs</a>
+      <a routerLink="/contact" (click)="toggleMobileMenu()"><app-button variant="primary" size="sm">Me contacter</app-button></a>
+    </div>
+  }
+</header>

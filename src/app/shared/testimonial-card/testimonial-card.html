@@ -1,0 +1,21 @@
+<div class="bg-surface-light p-8 rounded-2xl border border-border-light shadow-sm relative">
+  <span class="material-symbols-outlined absolute top-6 right-6 text-primary/20 text-5xl">format_quote</span>
+  <div class="flex gap-1 text-primary mb-4">
+    <span class="material-symbols-outlined text-sm filled">star</span>
+    <span class="material-symbols-outlined text-sm filled">star</span>
+    <span class="material-symbols-outlined text-sm filled">star</span>
+    <span class="material-symbols-outlined text-sm filled">star</span>
+    <span class="material-symbols-outlined text-sm filled">star</span>
+  </div>
+  <p class="text-gray-600 mb-6 relative z-10">{{ data().quote }}</p>
+  <div class="flex items-center gap-4">
+    <div
+      class="w-10 h-10 rounded-full bg-gray-200 bg-cover bg-center"
+      [style.background-image]="'url(' + data().avatarUrl + ')'">
+    </div>
+    <div>
+      <p class="font-bold text-sm">{{ data().name }}</p>
+      <p class="text-xs text-gray-500">{{ data().role }}</p>
+    </div>
+  </div>
+</div>

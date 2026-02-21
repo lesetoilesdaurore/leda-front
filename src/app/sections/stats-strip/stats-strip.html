@@ -1,0 +1,10 @@
+<div class="w-full bg-background-light py-8 border-b border-border-light">
+  <div class="max-w-[1280px] mx-auto px-4 md:px-10 flex flex-wrap justify-center md:justify-around gap-8 text-center md:text-left">
+    @for (stat of stats; track stat.value) {
+      <div class="flex flex-col items-center md:items-start">
+        <span class="text-3xl font-black text-primary">{{ stat.value }}</span>
+        <span class="text-sm font-medium opacity-70">{{ stat.label }}</span>
+      </div>
+    }
+  </div>
+</div>

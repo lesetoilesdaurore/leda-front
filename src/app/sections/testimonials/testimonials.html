@@ -1,0 +1,11 @@
+<section class="w-full px-4 md:px-10 py-16 md:py-24 max-w-[1280px] mx-auto" id="testimonials">
+  <div class="text-center mb-16">
+    <h2 class="text-3xl font-bold mb-4">Témoignages Clients</h2>
+    <div class="h-1 w-20 bg-primary mx-auto rounded-full"></div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    @for (testimonial of testimonials; track testimonial.name) {
+      <app-testimonial-card [data]="testimonial" />
+    }
+  </div>
+</section>

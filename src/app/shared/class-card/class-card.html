@@ -1,0 +1,23 @@
+<div class="group flex flex-col h-full bg-surface-light rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-border-light">
+  <div class="relative h-48 overflow-hidden">
+    <div
+      class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+      [style.background-image]="'url(' + data().imageUrl + ')'"
+      [attr.data-alt]="data().imageAlt">
+    </div>
+  </div>
+  <div class="p-6 flex flex-col flex-grow">
+    <div class="mb-4">
+      <app-icon [name]="data().icon" cssClass="text-primary text-3xl mb-2" />
+      <h3 class="text-lg font-bold mb-2">{{ data().title }}</h3>
+      <p class="text-sm text-gray-600 leading-relaxed">{{ data().description }}</p>
+    </div>
+    <div class="mt-auto">
+      <a class="inline-flex items-center text-sm font-bold text-primary hover:text-primary/80 transition-colors cursor-pointer"
+         [routerLink]="['/cours', data().slug]">
+        En savoir plus
+        <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+      </a>
+    </div>
+  </div>
+</div>
