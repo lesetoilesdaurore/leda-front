@@ -37,7 +37,7 @@ export class Classes {
       icon: 'bolt',
       title: 'CrossFit',
       description: 'Mouvements fonctionnels à haute intensité conçus pour développer puissance explosive et endurance.',
-      imageUrl: 'assets/photo-21.webp',
+      imageUrl: 'assets/crossfit-crop.webp',
       imageAlt: 'Homme soulevant des poids en salle de sport',
       slug: 'crossfit',
     },

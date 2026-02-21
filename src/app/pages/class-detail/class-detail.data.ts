@@ -41,7 +41,7 @@ export const CLASS_DATA: Record<string, ClassDetailData> = {
           'Travaillez en douceur l\'amplitude articulaire tout en favorisant la récupération musculaire.',
       },
     ],
-    galleryImages: ['assets/photo-09.webp', 'assets/photo-11.webp', 'assets/photo-13.webp'],
+    galleryImages: ['assets/reformer.webp', 'assets/tennis.webp', 'assets/mobilite.webp'],
     galleryTitle: 'En images',
     coachNote:
       '« Le Pilates Mat est le fondement de tout mon enseignement. C\'est là que tout commence : la respiration, le contrôle, la conscience de chaque muscle. »',
@@ -87,7 +87,7 @@ export const CLASS_DATA: Record<string, ClassDetailData> = {
           'Idéal pour la rééducation post-blessure grâce à des mouvements guidés et sans impact.',
       },
     ],
-    galleryImages: ['assets/photo-02.webp', 'assets/photo-06.webp', 'assets/photo-12.webp'],
+    galleryImages: ['assets/reformer-dos.webp', 'assets/wbs-profile.webp', 'assets/mobilite-2.webp'],
     galleryTitle: 'En images',
     coachNote:
       '« Le Reformer est un outil extraordinaire. Il permet de travailler en profondeur tout en préservant les articulations. Mes élèves voient des résultats dès les premières séances. »',
@@ -133,7 +133,7 @@ export const CLASS_DATA: Record<string, ClassDetailData> = {
           'Un travail doux qui libère les tensions accumulées et améliore la qualité de vie au quotidien.',
       },
     ],
-    galleryImages: ['assets/photo-03.webp', 'assets/photo-10.webp', 'assets/photo-15.webp'],
+    galleryImages: ['assets/pilate-reformer-crop.jpg', 'assets/wbs.webp', 'assets/snatch.webp'],
     galleryTitle: 'En images',
     coachNote:
       '« La mobilité est souvent négligée, pourtant c\'est la base de tout mouvement sain. Prenez soin de vos articulations, elles vous le rendront. »',
@@ -144,7 +144,7 @@ export const CLASS_DATA: Record<string, ClassDetailData> = {
     title: 'CrossFit',
     subtitle: 'Puissance & Dépassement',
     badge: 'Haute intensité',
-    heroImage: 'assets/photo-21.webp',
+    heroImage: 'assets/crossfit-crop.webp',
     heroDescription:
       'Mouvements fonctionnels à haute intensité conçus pour développer puissance explosive, endurance et mental d\'acier.',
     specs: [
@@ -179,7 +179,7 @@ export const CLASS_DATA: Record<string, ClassDetailData> = {
           'L\'énergie collective du groupe vous porte et vous motive à donner le meilleur de vous-même.',
       },
     ],
-    galleryImages: ['assets/photo-07.webp', 'assets/photo-20.webp', 'assets/photo-04.webp'],
+    galleryImages: ['assets/snatch.webp', 'assets/snatch-2.webp', 'assets/velo.webp'],
     galleryTitle: 'En images',
     coachNote:
       '« Le CrossFit, c\'est bien plus que soulever des poids. C\'est apprendre à se dépasser dans un environnement bienveillant où chaque mouvement est adapté à votre niveau. »',
