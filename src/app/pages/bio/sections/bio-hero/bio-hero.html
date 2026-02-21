@@ -1,0 +1,45 @@
+<section class="grid lg:grid-cols-2 gap-12 items-center">
+  <!-- Portrait -->
+  <div class="relative group">
+    <div class="absolute -inset-4 bg-primary/10 rounded-2xl -rotate-2 scale-95 group-hover:rotate-0 transition-transform duration-500"></div>
+    <div class="relative rounded-xl overflow-hidden shadow-2xl aspect-[4/5]">
+      <img class="w-full h-full object-cover" src="assets/photo-05.webp" alt="Portrait d'Aurore Lemire, coach fitness" />
+    </div>
+    <div class="absolute -bottom-6 -right-6 bg-surface-light p-5 rounded-xl shadow-lg border border-border-light max-w-[220px]">
+      <p class="text-primary-dark font-bold text-lg">10+ ans</p>
+      <p class="text-xs text-gray-500 uppercase tracking-widest font-semibold">d'expérience</p>
+    </div>
+  </div>
+
+  <!-- Contenu -->
+  <div class="flex flex-col gap-8">
+    <div>
+      <span class="inline-block py-1 px-3 bg-primary/20 text-primary-dark rounded-full text-xs font-bold uppercase tracking-wider mb-4">
+        Coach & Formatrice
+      </span>
+      <h1 class="text-4xl lg:text-6xl font-black text-text-light leading-[1.1] mb-6">
+        Rencontrez <br /><span class="text-primary">Aurore Lemire</span>
+      </h1>
+      <p class="text-lg text-gray-500 leading-relaxed italic">
+        « Je crois que le mouvement est la plus haute forme de respect envers soi-même. Que ce soit par la précision du Pilates ou l'intensité du CrossFit, ma mission est de vous aider à redécouvrir votre potentiel. »
+      </p>
+    </div>
+
+    <!-- Badges -->
+    <div class="flex flex-wrap gap-3">
+      @for (badge of badges; track badge) {
+        <div class="flex items-center gap-2 py-2 px-4 rounded-full border border-border-light bg-surface-light text-sm font-medium">
+          <app-icon name="check_circle" cssClass="text-primary text-base" />
+          <span>{{ badge }}</span>
+        </div>
+      }
+    </div>
+
+    <a routerLink="/contact"
+       class="w-fit bg-primary hover:bg-primary/90 text-text-light px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl shadow-primary/20 flex items-center gap-3 no-underline">
+      Réserver une séance
+      <app-icon name="arrow_forward" cssClass="text-xl" />
+    </a>
+  </div>
+</section>
+

@@ -53,6 +53,9 @@
           "defaultConfiguration": "production"
         },
         "serve": {
+          "options": {
+            "allowedHosts": ["stephine-avulsed-jordynn.ngrok-free.dev"]
+          },
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {

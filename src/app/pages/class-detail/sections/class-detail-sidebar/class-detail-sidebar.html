@@ -1,0 +1,34 @@
+<div class="bg-surface-light border border-border-light rounded-2xl p-6 shadow-sm sticky top-28 space-y-6">
+  <!-- Note du coach -->
+  <div>
+    <h3 class="text-xl font-bold mb-4 flex items-center gap-2 text-text-light">
+      <app-icon name="format_quote" cssClass="text-primary text-2xl" />
+      Le mot de la coach
+    </h3>
+    <div class="flex items-start gap-4 mb-6">
+      <div class="w-12 h-12 rounded-full overflow-hidden shrink-0">
+        <img class="w-full h-full object-cover" src="assets/photo-05.webp" alt="Aurore Lemire, coach certifiée Pilates et fitness" />
+      </div>
+      <div>
+        <p class="text-xs font-bold text-gray-500 uppercase">Coach</p>
+        <p class="font-bold text-text-light">Aurore Lemire</p>
+      </div>
+    </div>
+    <p class="text-gray-500 text-sm italic leading-relaxed">{{ coachNote() }}</p>
+  </div>
+
+  <!-- Séparateur -->
+  <div class="border-t border-border-light"></div>
+
+  <!-- CTA -->
+  <div class="text-center space-y-4">
+    <p class="text-sm text-gray-500">Intéressé(e) par ce cours ?</p>
+    <a routerLink="/contact" class="block w-full">
+      <app-button variant="primary" size="lg">Réserver une séance</app-button>
+    </a>
+    <a routerLink="/tarifs" class="block w-full">
+      <app-button variant="ghost" size="sm">Voir les tarifs</app-button>
+    </a>
+  </div>
+</div>
+

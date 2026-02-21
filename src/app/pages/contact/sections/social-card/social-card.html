@@ -1,0 +1,19 @@
+<div class="bg-primary rounded-2xl p-6 text-text-light flex flex-col items-center text-center relative overflow-hidden">
+  <!-- Cercles décoratifs -->
+  <div class="absolute -top-10 -right-10 w-32 h-32 bg-white opacity-20 rounded-full blur-2xl"></div>
+  <div class="absolute -bottom-10 -left-10 w-24 h-24 bg-white opacity-20 rounded-full blur-xl"></div>
+
+  <h3 class="font-bold text-xl mb-2 relative z-10">Suivez l'aventure</h3>
+  <p class="text-sm font-medium opacity-80 mb-6 relative z-10">Conseils quotidiens, séances en live et ambiance studio.</p>
+
+  <div class="flex gap-4 relative z-10">
+    @for (link of links; track link.icon) {
+      <a
+        [href]="link.url"
+        class="w-12 h-12 bg-white/20 hover:bg-white hover:text-primary backdrop-blur-sm rounded-full flex items-center justify-center transition-all text-text-light">
+        <app-icon [name]="link.icon" cssClass="text-xl" />
+      </a>
+    }
+  </div>
+</div>
+

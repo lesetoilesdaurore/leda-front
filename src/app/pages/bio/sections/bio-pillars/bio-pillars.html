@@ -1,0 +1,16 @@
+<section>
+  <h2 class="text-3xl font-bold text-text-light mb-10 text-center">Piliers d'Entraînement</h2>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    @for (pillar of pillars; track pillar.title) {
+      <a [routerLink]="['/cours', pillar.slug]"
+         class="p-8 bg-surface-light border border-border-light rounded-2xl hover:shadow-xl transition-all hover:-translate-y-1 no-underline block">
+        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+          <app-icon [name]="pillar.icon" cssClass="text-primary-dark text-2xl" />
+        </div>
+        <h3 class="font-bold text-lg mb-3 text-text-light">{{ pillar.title }}</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">{{ pillar.description }}</p>
+      </a>
+    }
+  </div>
+</section>
+

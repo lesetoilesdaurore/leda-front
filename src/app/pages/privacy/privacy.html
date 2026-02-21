@@ -1,0 +1,194 @@
+<!-- Page Politique de Confidentialité -->
+<!-- Tailwind safelist: bg-primary/20 text-text-light border-primary font-bold text-gray-600 border-transparent hover:bg-primary/10 hover:text-text-light font-medium -->
+<div class="max-w-[1200px] mx-auto px-4 md:px-10 py-8">
+
+  <!-- Fil d'Ariane -->
+  <nav class="mb-8 flex items-center gap-2 text-sm font-medium text-gray-500">
+    <a routerLink="/" class="hover:text-primary transition-colors">Accueil</a>
+    <app-icon name="chevron_right" cssClass="text-xs" />
+    <span class="text-text-light font-normal">Politique de Confidentialité</span>
+  </nav>
+
+  <div class="flex flex-col gap-10 lg:flex-row">
+
+    <!-- Sidebar Navigation -->
+    <aside class="w-full shrink-0 lg:w-80">
+      <div class="sticky top-28 space-y-1 rounded-xl border border-border-light bg-surface-light p-4 shadow-sm">
+        <div class="mb-4 px-2">
+          <h3 class="text-xs font-bold uppercase tracking-widest text-gray-400">Navigation</h3>
+        </div>
+        @for (item of sidebarItems; track item.id) {
+          <button
+            (click)="scrollTo(item.id)"
+            [class]="getSidebarClass(item.id)">
+            <app-icon [name]="item.icon" cssClass="text-lg text-primary" />
+            <span>{{ item.label }}</span>
+          </button>
+        }
+        <div class="mt-6 border-t border-border-light pt-5 px-2">
+          <p class="text-xs text-gray-400">Besoin d'aide ?</p>
+          <app-safe-email cssClass="mt-1 block text-sm font-semibold text-primary hover:underline" />
+        </div>
+      </div>
+    </aside>
+
+    <!-- Contenu principal -->
+    <div class="flex-1">
+      <div class="rounded-2xl bg-surface-light p-6 lg:p-12 shadow-sm border border-border-light">
+
+        <!-- En-tête -->
+        <header class="mb-12 border-b border-border-light pb-8">
+          <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-text-light">
+            Politique de Confidentialité
+          </h1>
+          <div class="mt-4 flex items-center gap-3">
+            <span class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary ring-1 ring-inset ring-primary/20">
+              Version 1.0
+            </span>
+            <p class="text-sm text-gray-500">Dernière mise à jour : {{ lastUpdate }}</p>
+          </div>
+        </header>
+
+        <!-- 1. Introduction -->
+        <section class="mb-14 scroll-mt-28" id="intro">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="p-2 bg-primary/10 rounded-lg">
+              <app-icon name="flag" cssClass="text-primary text-xl" />
+            </span>
+            <h2 class="text-2xl font-bold text-text-light">1. Introduction</h2>
+          </div>
+          <div class="space-y-4 leading-relaxed text-gray-600">
+            <p>
+              Bienvenue chez Les Étoiles d'Aurore. La protection de vos données personnelles est au cœur de notre engagement pour votre bien-être. Cette politique détaille la manière dont nous traitons vos informations lorsque vous utilisez nos services de Pilates, Reformer, Mobilité et coaching fonctionnel.
+            </p>
+            <p>
+              Nous nous engageons à respecter les principes du Règlement Général sur la Protection des Données (RGPD) et à assurer une transparence totale sur nos pratiques de traitement des données.
+            </p>
+          </div>
+        </section>
+
+        <!-- 2. Collecte des données -->
+        <section class="mb-14 scroll-mt-28" id="data-collection">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="p-2 bg-primary/10 rounded-lg">
+              <app-icon name="database" cssClass="text-primary text-xl" />
+            </span>
+            <h2 class="text-2xl font-bold text-text-light">2. Collecte des données</h2>
+          </div>
+          <p class="mb-6 leading-relaxed text-gray-600">
+            Nous collectons les informations nécessaires pour vous offrir une expérience d'entraînement sécurisée et personnalisée :
+          </p>
+          <ul class="grid gap-4 sm:grid-cols-2">
+            @for (item of dataItems; track item.title) {
+              <li class="flex items-start gap-3 rounded-xl border border-border-light p-4">
+                <app-icon name="check_circle" cssClass="text-primary mt-0.5" />
+                <div>
+                  <span class="font-bold text-text-light">{{ item.title }}</span>
+                  <p class="text-sm text-gray-500">{{ item.description }}</p>
+                </div>
+              </li>
+            }
+          </ul>
+        </section>
+
+        <!-- 3. Finalités du traitement -->
+        <section class="mb-14 scroll-mt-28" id="processing">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="p-2 bg-primary/10 rounded-lg">
+              <app-icon name="history_edu" cssClass="text-primary text-xl" />
+            </span>
+            <h2 class="text-2xl font-bold text-text-light">3. Finalités du traitement</h2>
+          </div>
+          <p class="mb-6 leading-relaxed text-gray-600">
+            Vos données sont traitées pour les finalités suivantes :
+          </p>
+          <div class="space-y-3">
+            @for (item of processingItems; track item.text) {
+              <div class="flex items-center gap-4 border-l-2 border-primary pl-6 py-1">
+                <p class="font-medium text-text-light">{{ item.text }}</p>
+              </div>
+            }
+          </div>
+        </section>
+
+        <!-- 4. Cookies -->
+        <section class="mb-14 scroll-mt-28" id="cookies">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="p-2 bg-primary/10 rounded-lg">
+              <app-icon name="cookie" cssClass="text-primary text-xl" />
+            </span>
+            <h2 class="text-2xl font-bold text-text-light">4. Gestion des cookies</h2>
+          </div>
+          <div class="rounded-xl bg-background-light p-6">
+            <p class="mb-4 text-gray-600 leading-relaxed">
+              Le site Les Étoiles d'Aurore n'utilise pas de cookies de suivi ou de cookies publicitaires. Seuls des cookies techniques strictement nécessaires au bon fonctionnement du site peuvent être déposés.
+            </p>
+            <p class="text-gray-600 leading-relaxed">
+              Conformément à la directive européenne 2009/136/CE, aucun cookie nécessitant le consentement de l'utilisateur n'est utilisé sur ce site.
+            </p>
+          </div>
+        </section>
+
+        <!-- 5. Vos droits (RGPD) -->
+        <section class="mb-14 scroll-mt-28" id="rights">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="p-2 bg-primary/10 rounded-lg">
+              <app-icon name="account_balance_wallet" cssClass="text-primary text-xl" />
+            </span>
+            <h2 class="text-2xl font-bold text-text-light">5. Vos droits (RGPD)</h2>
+          </div>
+          <p class="mb-6 text-gray-600">
+            Conformément au RGPD, vous disposez des droits suivants concernant vos données personnelles :
+          </p>
+          <ul class="space-y-4">
+            @for (right of rights; track right.label) {
+              <li class="flex items-start gap-3">
+                <app-icon name="check_circle" cssClass="text-primary mt-0.5 shrink-0" />
+                <div>
+                  <span class="font-bold text-text-light">{{ right.label }}</span>
+                  <p class="text-sm text-gray-500 leading-relaxed">{{ right.description }}</p>
+                </div>
+              </li>
+            }
+          </ul>
+          <p class="mt-6 text-sm text-gray-500 leading-relaxed">
+            Pour exercer vos droits, adressez votre demande par email à
+            <app-safe-email cssClass="text-primary font-medium hover:underline" />.
+            Vous disposez également du droit d'introduire une réclamation auprès de la CNIL
+            (<a class="text-primary hover:underline" href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">www.cnil.fr</a>).
+          </p>
+        </section>
+
+        <!-- 6. Sécurité -->
+        <section class="scroll-mt-28" id="security">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="p-2 bg-primary/10 rounded-lg">
+              <app-icon name="verified_user" cssClass="text-primary text-xl" />
+            </span>
+            <h2 class="text-2xl font-bold text-text-light">6. Sécurité des données</h2>
+          </div>
+          <div class="rounded-2xl bg-primary/5 p-6 md:p-8 space-y-4 text-gray-600 leading-relaxed">
+            <p>
+              Nous prenons toutes les mesures techniques et organisationnelles appropriées pour protéger vos données personnelles contre tout accès non autorisé, altération, divulgation ou destruction.
+            </p>
+            <p>
+              L'accès à vos informations personnelles est strictement limité au personnel autorisé ayant besoin d'y accéder pour assurer nos services. Les communications via le formulaire de contact sont transmises de manière sécurisée.
+            </p>
+          </div>
+        </section>
+
+        <!-- Pied de page contact -->
+        <div class="mt-16 border-t border-border-light pt-10 text-center">
+          <p class="text-gray-500 mb-6">Vous avez une question concernant la gestion de vos données ?</p>
+          <a routerLink="/contact"
+             class="inline-flex items-center gap-2 rounded-full bg-primary-dark px-8 py-3 font-bold text-white hover:scale-105 transition-transform no-underline">
+            Nous contacter
+            <app-icon name="alternate_email" cssClass="text-lg" />
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+

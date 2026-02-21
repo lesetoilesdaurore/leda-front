@@ -1,0 +1,32 @@
+<!-- Page Tarifs -->
+<app-pricing-hero />
+
+<div class="max-w-[1200px] mx-auto px-4 md:px-10 py-6 md:py-8">
+  <!-- Grille des tarifs -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <!-- Colonne Reformer + Promo -->
+    <div>
+      <app-pricing-table [data]="reformer" />
+      <app-promo-badge />
+    </div>
+
+    <!-- Colonne Tapis -->
+    <div>
+      <app-pricing-table [data]="tapis" />
+    </div>
+  </div>
+
+  <!-- Séparateur décoratif -->
+  <div class="my-16 md:my-20 border-t border-border-light relative">
+    <div class="absolute left-1/2 -top-4 -translate-x-1/2 bg-background-light px-6">
+      <span class="material-symbols-outlined text-primary opacity-50">grain</span>
+    </div>
+  </div>
+
+  <!-- Coaching individuel -->
+  <div class="max-w-4xl mx-auto mb-16">
+    <app-coaching-card />
+  </div>
+
+</div>
+

@@ -1,0 +1,48 @@
+@if (classData(); as data) {
+  <div class="max-w-[1200px] mx-auto px-4 md:px-10 py-8 space-y-10">
+    <!-- Fil d'Ariane -->
+    <nav class="flex items-center gap-2 text-sm text-gray-500 font-medium">
+      <a routerLink="/" class="hover:text-primary transition-colors">Accueil</a>
+      <app-icon name="chevron_right" cssClass="text-xs" />
+      <a routerLink="/" fragment="classes" class="hover:text-primary transition-colors">Cours</a>
+      <app-icon name="chevron_right" cssClass="text-xs" />
+      <span class="text-text-light font-normal">{{ data.title }}</span>
+    </nav>
+
+    <!-- Hero -->
+    <app-class-detail-hero [data]="data" />
+
+    <!-- Specs -->
+    <div class="mt-6">
+      <app-class-detail-specs [specs]="data.specs" class="mt-6"/>
+    </div>
+
+
+    <!-- Contenu principal -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+      <!-- Colonne gauche : Bienfaits + Galerie -->
+      <div class="lg:col-span-2 space-y-12">
+        <div class="mt-6">
+          <app-class-detail-benefits [benefits]="data.benefits" />
+        </div>
+        <div class="mt-6">
+          <app-class-detail-gallery [images]="data.galleryImages" [title]="data.galleryTitle" />
+        </div>
+      </div>
+
+      <!-- Colonne droite : Sidebar -->
+      <div>
+        <app-class-detail-sidebar [coachNote]="data.coachNote" [classTitle]="data.title" />
+      </div>
+    </div>
+  </div>
+} @else {
+  <!-- 404 -->
+  <div class="max-w-[1200px] mx-auto px-4 md:px-10 py-20 text-center">
+    <app-icon name="error_outline" cssClass="text-primary text-6xl mb-4" />
+    <h2 class="text-3xl font-bold text-text-light mb-4">Cours introuvable</h2>
+    <p class="text-gray-500 mb-8">Le cours que vous recherchez n'existe pas.</p>
+    <a routerLink="/" class="text-primary font-bold hover:underline">Retour à l'accueil</a>
+  </div>
+}
+

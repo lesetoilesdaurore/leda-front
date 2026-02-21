@@ -1,0 +1,101 @@
+<div class="bg-surface-light p-5 md:p-8 rounded-2xl shadow-sm border border-border-light">
+  <h2 class="text-2xl font-bold mb-5 text-text-light">Envoyer une demande</h2>
+
+  @if (submitted()) {
+    <!-- Message de succès -->
+    <div class="flex flex-col items-center text-center py-12 gap-4">
+      <app-icon name="check_circle" cssClass="text-primary text-5xl" />
+      <h3 class="text-xl font-bold text-text-light">Message envoyé !</h3>
+      <p class="text-gray-500">Merci pour votre message. Nous vous répondrons dans les plus brefs délais.</p>
+    </div>
+  } @else {
+    <form class="flex flex-col gap-4" (submit)="onSubmit($event)">
+      <!-- Honeypot : champ invisible pour piéger les bots -->
+      <div class="absolute opacity-0 h-0 w-0 overflow-hidden" style="position:absolute;left:-9999px;" aria-hidden="true" tabindex="-1">
+        <label>
+          Ne pas remplir ce champ
+          <input type="text" name="website_url" autocomplete="off" tabindex="-1" (input)="onHoneypotInput($event)" />
+        </label>
+      </div>
+
+      <!-- Message d'erreur -->
+      @if (errorMessage()) {
+        <div class="flex items-center gap-3 p-4 rounded-lg bg-red-50 border border-red-200 text-red-700 text-sm">
+          <app-icon name="error" cssClass="text-red-500 text-xl shrink-0" />
+          <span>{{ errorMessage() }}</span>
+        </div>
+      }
+
+      <!-- Nom & Email -->
+      <div class="flex flex-col md:flex-row gap-4">
+        <label class="flex flex-col flex-1 gap-2">
+          <span class="text-text-light text-sm font-semibold">Nom complet</span>
+          <div class="relative">
+            <input
+              name="name"
+              class="w-full h-12 rounded-lg border border-border-light bg-surface-light px-4 text-base text-text-light placeholder-gray-400 focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all"
+              placeholder="Marie Dupont"
+              required
+              type="text" />
+            <app-icon name="person" cssClass="absolute right-4 top-3 text-gray-400" />
+          </div>
+        </label>
+
+        <label class="flex flex-col flex-1 gap-2">
+          <span class="text-text-light text-sm font-semibold">Adresse email</span>
+          <div class="relative">
+            <input
+              name="email"
+              class="w-full h-12 rounded-lg border border-border-light bg-surface-light px-4 text-base text-text-light placeholder-gray-400 focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all"
+              placeholder="marie@exemple.com"
+              required
+              type="email" />
+            <app-icon name="mail" cssClass="absolute right-4 top-3 text-gray-400" />
+          </div>
+        </label>
+      </div>
+
+      <!-- Sélection du cours -->
+      <label class="flex flex-col gap-2">
+        <span class="text-text-light text-sm font-semibold">Je suis intéressé(e) par...</span>
+        <div class="relative">
+          <select
+            name="interest"
+            class="w-full h-12 appearance-none rounded-lg border border-border-light bg-surface-light px-4 text-base text-text-light focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all cursor-pointer">
+            <option disabled selected value="">Choisir un type de cours</option>
+            <option value="pilates">Pilates Mat</option>
+            <option value="reformer">Pilates Reformer</option>
+            <option value="mobility">Mobilité</option>
+            <option value="crossfit">CrossFit</option>
+            <option value="general">Demande générale</option>
+          </select>
+          <app-icon name="expand_more" cssClass="absolute right-4 top-3 text-gray-400 pointer-events-none" />
+        </div>
+      </label>
+
+      <!-- Message -->
+      <label class="flex flex-col gap-2">
+        <span class="text-text-light text-sm font-semibold">Message</span>
+        <textarea
+          name="message"
+          class="w-full min-h-[120px] rounded-lg border border-border-light bg-surface-light p-4 text-base text-text-light placeholder-gray-400 focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none resize-y transition-all"
+          required
+          placeholder="Comment puis-je vous aider à atteindre vos objectifs fitness ?"></textarea>
+      </label>
+
+      <!-- Bouton envoyer -->
+      <button
+        class="flex w-full md:w-auto items-center justify-center gap-2 rounded-lg bg-primary px-8 py-3 text-base font-bold text-text-light transition-transform hover:scale-[1.02] active:scale-[0.98] cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+        type="submit"
+        [disabled]="submitting()">
+        @if (submitting()) {
+          <span>Envoi en cours...</span>
+        } @else {
+          <span>Envoyer le message</span>
+          <app-icon name="send" cssClass="text-lg" />
+        }
+      </button>
+    </form>
+  }
+</div>
+

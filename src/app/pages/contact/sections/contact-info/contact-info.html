@@ -1,0 +1,23 @@
+<div class="bg-surface-light p-6 rounded-2xl shadow-sm border border-border-light">
+  <h3 class="font-bold text-lg mb-4 text-text-light">Contact direct</h3>
+  <div class="flex flex-col gap-4">
+    @for (item of items; track item.label) {
+      <div class="flex items-center gap-4 group cursor-pointer">
+        <div class="w-10 h-10 min-w-10 min-h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors">
+          <app-icon [name]="item.icon" cssClass="text-primary group-hover:text-text-light text-xl" />
+        </div>
+        <div>
+          <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">{{ item.label }}</p>
+          @if (item.type === 'email') {
+            <app-safe-email cssClass="text-text-light font-medium hover:text-primary transition-colors" />
+          } @else if (item.type === 'phone') {
+            <app-safe-phone cssClass="text-text-light font-medium hover:text-primary transition-colors" />
+          } @else {
+            <p class="text-text-light font-medium">{{ item.value }}</p>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</div>
+

@@ -1,0 +1,76 @@
+<!-- Page Mentions Légales -->
+
+<!-- Hero -->
+<section class="relative h-56 w-full flex items-center justify-center overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-b from-primary/10 to-transparent"></div>
+  <div class="relative z-10 text-center space-y-3">
+    <h1 class="text-4xl md:text-5xl font-bold text-text-light">Mentions Légales</h1>
+    <p class="text-gray-500 flex items-center justify-center gap-2">
+      <app-icon name="schedule" cssClass="text-sm" />
+      <span>Dernière mise à jour : {{ lastUpdate }}</span>
+    </p>
+  </div>
+</section>
+
+<!-- Contenu -->
+<div class="max-w-3xl mx-auto px-4 md:px-6 -mt-8 pb-16">
+  <div class="bg-surface-light rounded-xl shadow-sm border border-border-light p-6 md:p-12 space-y-12">
+
+    @for (section of sections; track section.title) {
+      <section class="space-y-4">
+        <!-- Titre de section -->
+        <div class="flex items-center gap-3 text-primary">
+          <app-icon [name]="section.icon" cssClass="text-2xl" />
+          <h2 class="text-xl md:text-2xl font-bold">{{ section.title }}</h2>
+        </div>
+
+        <!-- Contenu texte -->
+        <div class="text-gray-600 leading-relaxed whitespace-pre-line">
+          {{ section.content }}
+        </div>
+
+        <!-- Email protégé après le texte (section RGPD) -->
+        @if (section.hasContactInfo) {
+          <div class="mt-1">
+            <app-safe-email cssClass="text-primary font-medium hover:underline" />
+          </div>
+        }
+
+        <!-- Bloc info (éditeur du site) -->
+        @if (section.infoBlock) {
+          <div class="mt-4 p-6 rounded-lg bg-background-light border-l-4 border-primary grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold text-text-light mb-2">{{ section.infoBlock.leftTitle }}</h4>
+              @for (line of section.infoBlock.leftLines; track line) {
+                <p class="text-gray-600 text-sm">{{ line }}</p>
+              }
+            </div>
+            <div>
+              <h4 class="font-bold text-text-light mb-2">{{ section.infoBlock.rightTitle }}</h4>
+              @for (line of section.infoBlock.rightLines; track line) {
+                <p class="text-gray-600 text-sm">{{ line }}</p>
+              }
+              <p class="text-gray-600 text-sm">Email : <app-safe-email cssClass="text-gray-600 text-sm" /></p>
+              <p class="text-gray-600 text-sm">Tél : <app-safe-phone cssClass="text-gray-600 text-sm" /></p>
+            </div>
+          </div>
+        }
+      </section>
+    }
+
+    <!-- Pied de page -->
+    <div class="pt-10 border-t border-border-light text-center">
+      <p class="text-gray-400 text-sm">
+        Pour toute question concernant ces mentions légales, vous pouvez nous contacter à l'adresse
+        <app-safe-email cssClass="text-primary font-medium hover:underline" />
+      </p>
+      <div class="mt-6">
+        <a routerLink="/" class="group inline-flex items-center gap-2 text-primary font-bold [text-decoration:none] hover:[text-decoration:none]">
+          <app-icon name="arrow_back" cssClass="text-lg" />
+          <span class="group-hover:underline underline-offset-4">Retour à l'accueil</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+

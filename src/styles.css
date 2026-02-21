@@ -1,3 +1,61 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "tailwindcss";
+
+@theme {
+  /* Palette principale basée sur rgb(57,100,92) & rgb(86,189,186) */
+  --color-primary: #56bdba;
+  --color-primary-dark: #39645c;
+  --color-primary-light: #7dd4d1;
+  --color-primary-50: #eef9f8;
+  --color-primary-100: #d5f0ef;
+  --color-primary-200: #ade2e0;
+  --color-primary-300: #7dd4d1;
+  --color-primary-400: #56bdba;
+  --color-primary-500: #3da3a0;
+  --color-primary-600: #39645c;
+  --color-primary-700: #2d4f49;
+  --color-primary-800: #1f3833;
+  --color-primary-900: #142523;
+
+  /* Fonds & surfaces */
+  --color-background-light: #f5f8f7;
+  --color-background-dark: #142523;
+  --color-surface-light: #ffffff;
+  --color-surface-dark: #1f3833;
+
+  /* Textes */
+  --color-text-light: #1a2e2a;
+  --color-text-dark: #eef9f8;
+
+  /* Bordures */
+  --color-border-light: #e2edeb;
+  --color-border-dark: #2d4f49;
+
+  --font-display: "Lexend", sans-serif;
+
+  --radius-DEFAULT: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-full: 9999px;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  background-color: var(--color-background-light);
+  color: var(--color-text-light);
+}
+
+/* Material Symbols filled variant */
+.material-symbols-outlined.filled {
+  font-variation-settings: 'FILL' 1;
+}

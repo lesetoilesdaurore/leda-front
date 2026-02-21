@@ -1,0 +1,21 @@
+<div class="bg-surface-light p-8 md:p-12 rounded-3xl shadow-xl border border-border-light relative overflow-hidden">
+  <!-- Décoration -->
+  <div class="absolute -right-16 -bottom-16 opacity-5 hidden lg:block">
+    <span class="material-symbols-outlined text-[200px] text-primary">filter_vintage</span>
+  </div>
+
+  <div class="relative z-10">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-text-light">COACHING INDIVIDUEL</h2>
+    <p class="text-primary font-medium text-lg md:text-xl mb-8 uppercase tracking-wide">Remise en forme selon vos besoins</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 text-lg">
+      @for (specialty of specialties; track specialty) {
+        <div class="flex items-center gap-3">
+          <app-icon name="auto_awesome" cssClass="text-primary text-xl" />
+          <span class="text-text-light">{{ specialty }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</div>
+
