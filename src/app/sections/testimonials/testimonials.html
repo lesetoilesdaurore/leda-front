@@ -3,7 +3,7 @@
     <h2 class="text-3xl font-bold mb-4">Témoignages Clients</h2>
     <div class="h-1 w-20 bg-primary mx-auto rounded-full"></div>
   </div>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
     @for (testimonial of testimonials; track testimonial.name) {
       <app-testimonial-card [data]="testimonial" />
     }

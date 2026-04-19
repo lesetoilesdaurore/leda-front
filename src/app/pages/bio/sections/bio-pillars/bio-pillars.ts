@@ -37,7 +37,7 @@ export class BioPillars {
     {
       icon: 'bolt',
       title: 'Puissance Fonctionnelle',
-      description: 'Mouvements fonctionnels haute intensité adaptés à tous les niveaux pour développer force et endurance cardiovasculaire.',
+      description: 'Mouvements fonctionnels de la basse à la haute intensité adaptés à tous les niveaux pour développer force et endurance cardiovasculaire.',
       slug: 'crossfit',
     },
   ];

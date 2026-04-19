@@ -12,8 +12,8 @@ export interface PhilosophyStat {
 export class BioPhilosophy {
   stats: PhilosophyStat[] = [
     { value: '500+', label: 'Clients accompagnés' },
-    { value: '15', label: 'Certifications actives' },
-    { value: '10+', label: "Années d'enseignement" },
+    { value: '5', label: 'Formations et certifications actives' },
+    { value: '15+', label: "Années d'enseignement" },
   ];
 }
 

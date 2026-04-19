@@ -13,10 +13,10 @@ export interface Certification {
 })
 export class BioCertifications {
   certifications: Certification[] = [
-    { icon: 'verified', label: 'NASM-CPT' },
+    { icon: 'verified', label: 'Reprogrammation Myofasciale' },
     { icon: 'workspace_premium', label: 'Formatrice Pilates Certifiée' },
-    { icon: 'stars', label: 'PMA Pilates Certifiée' },
-    { icon: 'clinical_notes', label: 'Precision Nutrition L1' },
+    { icon: 'stars', label: 'Formatrice Pilates Reformer Certifiée' },
+    { icon: 'clinical_notes', label: 'Sport et périnée' },
   ];
 }
 

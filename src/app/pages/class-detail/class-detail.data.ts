@@ -41,7 +41,7 @@ export const CLASS_DATA: Record<string, ClassDetailData> = {
           'Travaillez en douceur l\'amplitude articulaire tout en favorisant la récupération musculaire.',
       },
     ],
-    galleryImages: ['assets/reformer.webp', 'assets/tennis.webp', 'assets/mobilite.webp'],
+    galleryImages: ['assets/1000021869.jpg', 'assets/1000021870.jpg', 'assets/1000021890.jpg'],
     galleryTitle: 'En images',
     coachNote:
       '« Le Pilates Mat est le fondement de tout mon enseignement. C\'est là que tout commence : la respiration, le contrôle, la conscience de chaque muscle. »',
@@ -58,8 +58,8 @@ export const CLASS_DATA: Record<string, ClassDetailData> = {
     specs: [
       { icon: 'schedule', label: 'Durée', value: '50 minutes' },
       { icon: 'exercise', label: 'Intensité', value: 'Modérée à élevée' },
-      { icon: 'fitness_center', label: 'Équipement', value: 'Reformer & ressorts' },
-      { icon: 'groups', label: 'Effectif', value: 'Max 6 pers.' },
+      { icon: 'fitness_center', label: 'Équipement', value: 'Reformer' },
+      { icon: 'groups', label: 'Effectif', value: 'Max 2 pers.' },
     ],
     benefits: [
       {
@@ -87,7 +87,7 @@ export const CLASS_DATA: Record<string, ClassDetailData> = {
           'Idéal pour la rééducation post-blessure grâce à des mouvements guidés et sans impact.',
       },
     ],
-    galleryImages: ['assets/reformer-dos.webp', 'assets/wbs-profile.webp', 'assets/mobilite-2.webp'],
+    galleryImages: ['assets/1000021900.jpg', 'assets/1000021901.jpg', 'assets/1000021902.jpg'],
     galleryTitle: 'En images',
     coachNote:
       '« Le Reformer est un outil extraordinaire. Il permet de travailler en profondeur tout en préservant les articulations. Mes élèves voient des résultats dès les premières séances. »',
@@ -98,11 +98,11 @@ export const CLASS_DATA: Record<string, ClassDetailData> = {
     title: 'Mobilité',
     subtitle: 'Bougez librement',
     badge: 'Fluidité & Bien-être',
-    heroImage: 'assets/mobility-crop.jpg',
+    heroImage: 'assets/1000021884.png',
     heroDescription:
       'Améliorez la santé articulaire et la qualité de mouvement grâce à des séquences fluides, restauratrices et accessibles à tous.',
     specs: [
-      { icon: 'schedule', label: 'Durée', value: '45 minutes' },
+      { icon: 'schedule', label: 'Durée', value: '50 minutes' },
       { icon: 'exercise', label: 'Intensité', value: 'Douce à modérée' },
       { icon: 'fitness_center', label: 'Équipement', value: 'Aucun / accessoires légers' },
       { icon: 'groups', label: 'Effectif', value: 'Max 12 pers.' },
@@ -133,7 +133,7 @@ export const CLASS_DATA: Record<string, ClassDetailData> = {
           'Un travail doux qui libère les tensions accumulées et améliore la qualité de vie au quotidien.',
       },
     ],
-    galleryImages: ['assets/pilate-reformer-crop.jpg', 'assets/wbs.webp', 'assets/snatch.webp'],
+    galleryImages: ['assets/20240419_191219.jpg', 'assets/IMG-20250221-WA0002.jpg', 'assets/20240419_191900.jpg'],
     galleryTitle: 'En images',
     coachNote:
       '« La mobilité est souvent négligée, pourtant c\'est la base de tout mouvement sain. Prenez soin de vos articulations, elles vous le rendront. »',
@@ -141,17 +141,17 @@ export const CLASS_DATA: Record<string, ClassDetailData> = {
 
   crossfit: {
     slug: 'crossfit',
-    title: 'CrossFit',
-    subtitle: 'Puissance & Dépassement',
-    badge: 'Haute intensité',
+    title: 'Crosstraining',
+    subtitle: 'Puissance & Renforcement',
+    badge: 'Basse à haute intensité',
     heroImage: 'assets/crossfit-crop.webp',
     heroDescription:
-      'Mouvements fonctionnels à haute intensité conçus pour développer puissance explosive, endurance et mental d\'acier.',
+      'Mouvements fonctionnels à intensité progressive pour développer puissance, endurance, coordination et mental d\'acier.',
     specs: [
       { icon: 'schedule', label: 'Durée', value: '60 minutes' },
-      { icon: 'exercise', label: 'Intensité', value: 'Élevée' },
+      { icon: 'exercise', label: 'Intensité', value: 'Basse à élevée' },
       { icon: 'fitness_center', label: 'Équipement', value: 'Barres, kettlebells, cordes' },
-      { icon: 'groups', label: 'Effectif', value: 'Max 12 pers.' },
+      { icon: 'groups', label: 'Effectif', value: 'Cours particulier ou classe (10 pers).' },
     ],
     benefits: [
       {

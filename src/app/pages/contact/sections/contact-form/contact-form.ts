@@ -1,6 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Icon } from '../../../../shared/icon/icon';
+import { ContactProtectionService } from '../../../../shared/services/contact-protection.service';
 
 @Component({
   selector: 'app-contact-form',
@@ -9,6 +10,10 @@ import { Icon } from '../../../../shared/icon/icon';
 })
 export class ContactForm {
   private http = inject(HttpClient);
+  private contact = inject(ContactProtectionService);
+
+  /** 'mailto' actif pour ouvrir la boîte mail utilisateur. Garder 'api' pour le flux SMTP futur. */
+  private readonly submitMode: 'mailto' | 'api' = 'mailto';
 
   /** Honeypot : si ce champ est rempli, c'est un bot */
   honeypot = '';
@@ -58,6 +63,17 @@ export class ContactForm {
       return;
     }
 
+    if (this.submitMode === 'mailto') {
+      this.submitViaMailto(body);
+      this.submitted.set(true);
+      form.reset();
+      return;
+    }
+
+    this.submitViaApi(body);
+  }
+
+  private submitViaApi(body: { name: string; email: string; interest: string; message: string }): void {
     this.submitting.set(true);
 
     this.http.post<{ success?: boolean; error?: string }>('/api/contact', body).subscribe({
@@ -73,6 +89,30 @@ export class ContactForm {
         );
       },
     });
+  }
+
+  private submitViaMailto(body: { name: string; email: string; interest: string; message: string }): void {
+    const interestLabels: Record<string, string> = {
+      pilates: 'Pilates Mat',
+      reformer: 'Pilates Reformer',
+      mobility: 'Mobilité',
+      crossfit: 'CrossFit',
+      general: 'Demande générale',
+    };
+
+    const interestLabel = interestLabels[body.interest] || body.interest || 'Non précisé';
+    const to = this.contact.getEmail();
+    const subject = `Demande de contact - ${body.name}`;
+    const messageLines = [
+      `Nom: ${body.name}`,
+      `Email: ${body.email}`,
+      `Intérêt: ${interestLabel}`,
+      '',
+      'Message:',
+      body.message,
+    ];
+
+    window.location.href = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(messageLines.join('\n'))}`;
   }
 }
 

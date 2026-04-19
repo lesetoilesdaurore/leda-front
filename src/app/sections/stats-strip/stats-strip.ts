@@ -13,8 +13,8 @@ export interface Stat {
 })
 export class StatsStrip {
   stats: Stat[] = [
-    { value: '10+', label: "Années d'expérience" },
+    { value: '15+', label: "Années d'expérience" },
     { value: '500+', label: 'Clients transformés' },
-    { value: '4', label: 'Méthodes spécialisées' },
+    { value: '5', label: 'Méthodes spécialisées' },
   ];
 }

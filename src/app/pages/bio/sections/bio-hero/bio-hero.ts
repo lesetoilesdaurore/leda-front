@@ -9,9 +9,10 @@ import { Icon } from '../../../../shared/icon/icon';
 })
 export class BioHero {
   badges: string[] = [
-    'Spécialiste Pilates',
-    'Reformer Certifiée',
+    'Reformer et Pilâtes Mat Certifiée',
     'Experte Mobilité',
+    'Renforcement musculaire',
+    'Core'
   ];
 }
 
