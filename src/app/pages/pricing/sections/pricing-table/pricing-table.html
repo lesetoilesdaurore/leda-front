@@ -5,6 +5,10 @@
     <h2 class="text-xl md:text-2xl font-bold tracking-tight uppercase text-text-light">{{ data().title }}</h2>
   </div>
 
+  @if (data().description) {
+    <p class="text-sm text-gray-500">{{ data().description }}</p>
+  }
+
   <!-- Lignes de tarif -->
   <div class="space-y-2">
     @for (item of data().items; track item.label) {
@@ -20,5 +24,8 @@
       </div>
     }
   </div>
-</div>
 
+  @if (data().note) {
+    <p class="text-sm text-primary font-medium pt-1">{{ data().note }}</p>
+  }
+</div>

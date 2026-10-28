@@ -10,6 +10,8 @@ export interface PricingItem {
 export interface PricingTableData {
   icon: string;
   title: string;
+  description?: string;
+  note?: string;
   items: PricingItem[];
 }
 
