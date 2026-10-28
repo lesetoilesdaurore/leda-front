@@ -12,8 +12,8 @@ export class ContactForm {
   private http = inject(HttpClient);
   private contact = inject(ContactProtectionService);
 
-  /** 'mailto' actif pour ouvrir la boîte mail utilisateur. Garder 'api' pour le flux SMTP futur. */
-  private readonly submitMode: 'mailto' | 'api' = 'mailto';
+  /** 'api' envoie via /api/contact (Resend). 'mailto' ouvre la boîte mail de l'utilisateur. */
+  private readonly submitMode: 'mailto' | 'api' = 'api';
 
   /** Honeypot : si ce champ est rempli, c'est un bot */
   honeypot = '';
