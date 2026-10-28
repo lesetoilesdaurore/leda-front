@@ -44,7 +44,7 @@ export class ClassDetail {
         this.seo.update({
           title: `Cours ${data.title} - ${data.subtitle}`,
           description: data.heroDescription,
-          canonical: `https://lesetoilesdaurore.fr/cours/${data.slug}`,
+          canonical: `https://lesetoilesdaurore.fit/cours/${data.slug}`,
         });
       }
     });

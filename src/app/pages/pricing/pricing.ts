@@ -17,7 +17,7 @@ export class Pricing implements OnInit {
     this.seo.update({
       title: 'Tarifs',
       description: 'Découvrez les tarifs des cours de Pilates Reformer, Tapis et coaching individuel chez Les Étoiles d\'Aurore à Saint-Martin-d\'Hères. Séances d\'essai disponibles.',
-      canonical: 'https://lesetoilesdaurore.fr/tarifs',
+      canonical: 'https://lesetoilesdaurore.fit/tarifs',
     });
   }
 

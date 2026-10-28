@@ -17,7 +17,7 @@ export class Contact implements OnInit {
     this.seo.update({
       title: 'Contact',
       description: 'Contactez Les Étoiles d\'Aurore pour réserver un cours de Pilates, Reformer, Mobilité ou CrossFit à Saint-Martin-d\'Hères. Réponse rapide garantie.',
-      canonical: 'https://lesetoilesdaurore.fr/contact',
+      canonical: 'https://lesetoilesdaurore.fit/contact',
     });
   }
 }

@@ -28,7 +28,7 @@ export class Legal implements OnInit {
     this.seo.update({
       title: 'Mentions légales',
       description: 'Mentions légales du site Les Étoiles d\'Aurore. Informations sur l\'éditeur, l\'hébergement, la propriété intellectuelle et la protection des données.',
-      canonical: 'https://lesetoilesdaurore.fr/mentions-legales',
+      canonical: 'https://lesetoilesdaurore.fit/mentions-legales',
       noindex: true,
     });
   }

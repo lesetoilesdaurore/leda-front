@@ -17,7 +17,7 @@ export class SeoService {
   private doc = inject(DOCUMENT);
 
   private readonly siteName = "Les Étoiles d'Aurore";
-  private readonly baseUrl = 'https://lesetoilesdaurore.fr';
+  private readonly baseUrl = 'https://lesetoilesdaurore.fit';
   private readonly defaultOgImage = `${this.baseUrl}/assets/og-image.jpg`;
 
   update(data: SeoData): void {

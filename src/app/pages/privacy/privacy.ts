@@ -49,7 +49,7 @@ export class Privacy implements OnInit, AfterViewInit, OnDestroy {
     this.seo.update({
       title: 'Politique de confidentialité',
       description: 'Politique de confidentialité du site Les Étoiles d\'Aurore. Informations sur la collecte de données, les cookies, vos droits RGPD et la sécurité.',
-      canonical: 'https://lesetoilesdaurore.fr/confidentialite',
+      canonical: 'https://lesetoilesdaurore.fit/confidentialite',
       noindex: true,
     });
   }

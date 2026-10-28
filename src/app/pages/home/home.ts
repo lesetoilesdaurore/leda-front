@@ -19,7 +19,7 @@ export class Home implements OnInit {
     this.seo.update({
       title: 'Pilates, Reformer & Coaching à Saint-Martin-d\'Hères',
       description: 'Les Étoiles d\'Aurore : cours de Pilates Mat, Reformer, Mobilité et CrossFit à Saint-Martin-d\'Hères (Grenoble). Coaching personnalisé par Aurore Lemire.',
-      canonical: 'https://lesetoilesdaurore.fr/',
+      canonical: 'https://lesetoilesdaurore.fit/',
     });
   }
 }

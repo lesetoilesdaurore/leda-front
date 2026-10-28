@@ -21,7 +21,7 @@ export class Bio implements OnInit {
     this.seo.update({
       title: 'Aurore Lemire - Coach Pilates & Fitness',
       description: 'Découvrez le parcours d\'Aurore Lemire, coach certifiée en Pilates, Reformer, Mobilité et CrossFit avec plus de 10 ans d\'expérience à Saint-Martin-d\'Hères.',
-      canonical: 'https://lesetoilesdaurore.fr/bio',
+      canonical: 'https://lesetoilesdaurore.fit/bio',
     });
   }
 }

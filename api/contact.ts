@@ -1,17 +1,11 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 
+const RESEND_API_KEY = process.env['RESEND_API_KEY'] || '';
+const CONTACT_FROM_EMAIL = process.env['CONTACT_FROM_EMAIL'] || 'onboarding@resend.dev';
+const CONTACT_TO_EMAIL = process.env['CONTACT_TO_EMAIL'] || '';
 
-const GMAIL_USER = process.env['GMAIL_USER'] || '';
-const GMAIL_APP_PASS = process.env['GMAIL_APP_PASS'] || '';
-
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: GMAIL_USER,
-    pass: GMAIL_APP_PASS,
-  },
-});
+const resend = new Resend(RESEND_API_KEY || 'missing');
 
 interface ContactBody {
   name: string;
@@ -47,8 +41,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ error: 'Méthode non autorisée' });
   }
 
-  if (!GMAIL_USER || !GMAIL_APP_PASS) {
-    console.error('GMAIL_USER ou GMAIL_APP_PASS non configuré');
+  if (!RESEND_API_KEY || !CONTACT_TO_EMAIL) {
+    console.error('RESEND_API_KEY ou CONTACT_TO_EMAIL non configuré');
     return res.status(500).json({ error: 'Configuration email serveur manquante.' });
   }
 
@@ -78,9 +72,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const interestLabel = interestLabels[interest] || interest || 'Non précisé';
 
   try {
-    await transporter.sendMail({
-      from: `"Les Étoiles d'Aurore — Contact" <${GMAIL_USER}>`,
-      to: GMAIL_USER,
+    const { error } = await resend.emails.send({
+      from: `Les Étoiles d'Aurore — Contact <${CONTACT_FROM_EMAIL}>`,
+      to: [CONTACT_TO_EMAIL],
       replyTo: email,
       subject: `✨ Nouveau message de ${name} — ${interestLabel}`,
       html: `
@@ -110,12 +104,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
               <div style="background: #f5f8f7; padding: 16px; border-radius: 8px; white-space: pre-wrap; line-height: 1.6;">${escapeHtml(message)}</div>
             </div>
             <p style="margin-top: 24px; font-size: 12px; color: #9ca3af;">
-              Envoyé depuis le formulaire de contact du site lesetoilesdaurore.fr
+              Envoyé depuis le formulaire de contact du site lesetoilesdaurore.fit
             </p>
           </div>
         </div>
       `,
     });
+
+    if (error) {
+      console.error('Erreur Resend:', error);
+      return res.status(500).json({ error: "Erreur lors de l'envoi de l'email." });
+    }
 
     return res.status(200).json({ success: true });
   } catch (err) {
